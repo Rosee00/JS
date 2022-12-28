@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //배열을 조작하는 다양한 함수
+        //MDN
+        var arr = [1,2,3,4,5];
+
+        //배열 마지막에 추가 push()
+        arr.push(6);
+        console.log(arr);
+
+        //배열 마지막 요소 제거 pop()
+        arr.pop();
+        console.log(arr);
+
+        //배열의 첫번째 요소 추가 unshift()
+        /* arr.unshift([1,2]); */
+        /* arr.unshift(1,2); */
+        arr.unshift(10);
+        console.log(arr);
+
+        //배열의 첫번째 요소 제거 shift()
+        arr.shift();
+        console.log(arr);
+
+        //배열의 중간 요소에 추가 삭제 splice()
+        arr.splice(2, 1); //2번 인덱스 삭제
+        console.log(arr);
+
+        arr.splice(2, 1, 'a'); //2번 인덱스의 1개 삭제, a추가
+        console.log(arr);
+
+        arr.splice(2, 0, 'b'); //2번 인덱스 0개 삭제, b추가
+        console.log(arr);
+
+        //배열 정렬 -> 사전등재순
+        arr.sort();
+        console.log(arr);
+
+        arr.reverse(); //배열 뒤집기
+        console.log(arr);
+
+        //배열탐색
+        console.log(arr.indexOf('a')); //발견된 위치 반환, 결과 값: 1
+        console.log(arr.indexOf('a', 2)); //2번째 위치에서 부터 a를 탐색, 값이 없다면 -1 반환
+
+        if(arr.indexOf('a') != -1){ }
+
+        //배열 합치기 👍
+        var arr2 = ['가', '나', '다'];
+        var newArr = arr.concat(arr2);
+        console.log(newArr);
+
+        //filter, foreach(반복문), join, map 등등 자주 사용됨 
+
+    </script>
+
+</body>
+</html>
