@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>change이벤트</h3>
+    
+    <div id="msg"></div>
+
+    <select id="sel">
+        <option>선택</option>
+        <option>hello</option>
+        <option>안녕하세요</option>
+        <option>你好</option>
+    </select>
+
+    <script>
+        var sel = document.getElementById("sel");
+        var msg = document.getElementById("msg");
+        var m = "";
+        
+        sel.onchange = function(){
+            console.log(sel.value);//값 확인
+
+            var result = sel.value;// 선택
+            msg.innerHTML = result;
+            if(result == "선택"){
+                m = "단어를 선택하세요"
+                msg.innerHTML = m;
+            } else if(result == "hello"){
+                m = "영어"
+                msg.innerHTML = m;
+            } else if(result == "안녕하세요"){
+                m = "한국어"
+                msg.innerHTML = m;
+            } else if(result == "你好"){
+                m = "중국어"
+                msg.innerHTML = m;
+            }
+            
+
+
+        }
+
+
+
+
+        
+    </script>
+
+</body>
+</html>

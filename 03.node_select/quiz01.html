@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>사용자가 버튼을 클릭하면 input태그의 공백여부, 체크박스의 체크여부를 확인</h3>
+
+    아이디:<input type="input" id="id">
+    기억하기:<input type="checkbox" class="remember">
+
+    <button id="btn">확인</button>
+
+    <script>
+        var btn = document.getElementById("btn"); //button
+        var id = document.getElementById("id"); //input
+        var remember = document.querySelector(".remember"); //checkbox
+
+        btn.onclick = function() {
+            console.log('value값:')
+            if(id.value == ""){
+                alert("input의 값을 확인하세요");
+            } 
+            console.log(remember.cheked);
+
+            if(remember.cheked == false){
+                alert("기억하기를 체크하세요")
+            }
+        }
+
+        // btn.onclick = function(){
+        //     var check = remember[0].checked;
+        //     console.log(id.value.length);
+        //     console.log(check);
+
+        //     console.log(remember[0].checked);
+        //    if(id.value.length == 0 ){
+        //         alert("아이디를 입력하세요");
+                
+        //    } else if(remember[0].checked){
+        //         alert("아이디:", id.value);
+        //    } else {
+        //         console.log("??");
+        //    }
+        // }
+
+
+    </script>
+
+    <hr>
+
+    <h3>인라인이벤트 - 사용자가 체크박스를 클릭할때 마다 경고창에 value 값을 띄어주세요</h3>
+    <input type="checkbox" value="1" onclick="check(this)">조항1
+    <input type="checkbox" value="2" onclick="check(this)">조항2
+    <input type="checkbox" value="3" onclick="check(this)">조항3
+
+    <script>
+        function check(tag){
+            //console.log(tag); 태그가 넘어옴
+            if(tag.checked){
+                alert(tag.value + "조항선택")
+            }
+        }
+    </script>
+
+
+</body>
+</html>
