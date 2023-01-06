@@ -11,16 +11,17 @@
     <script>
         //console.log(navigator);
         //콜백 - 호출하면 다시 거기다가 내가 결과를 돌려줄게...
-        navigator.geolocation.getCurrentPosition(success, fail); //함수가 두개~
+        navigator.geolocation.getCurrentPosition(success, fail); //콜백함수가 두개~
 
         function success(result){ //위치정보 조회에 성공하면 success함수를 실행
             console.log(result.coords);
             console.log(result.coords.latitued);//위도
             console.log(result.coords.longitude);//경도
-        }
+        }//콜백함수1
+
         function fail(result){ //위치정보를 실패하면 fail함수를 실행
             console.log(result);
-        }
+        }//콜백함수2
 
     </script>
 

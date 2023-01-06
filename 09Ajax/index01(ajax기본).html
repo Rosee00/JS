@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="ajax()">ajax요청</button>
+
+    <script>
+
+        /* 
+        비동기 - 웹페이지 이동없이 데이터만 주고받는 기술
+        fetch()를 호출하면 Promise를 반환
+
+        Promise
+        -pending : 수행중
+        -fullfiled : 성공
+        -reject : 실패
+       
+        1. 리턴이 Promise라면 then(콜백함수) 로 결과를 받을 수 있음
+        
+        */
+
+        function ajax(){
+            //1st
+            // var result = fetch("hi.txt");
+            // result.then(function(response) {
+            //     console.log(response);
+            // })
+
+            //2nd
+            /* 
+                fetch("hi.txt").then(function(response){
+                if(response.status != 200){ //200: 성공
+                    alert("통신에 에러가 발생했습니다");
+                    return;
+                }
+                // var a = response.text();
+                // console.log(a); //프로미스
+                response.text().then(function(data){
+                    console.log(data);
+                });
+            }); 
+            */
+
+            //3rd - 콜백에 리턴을 걸면 fetch가 다시 Promsie를 반환
+            fetch("hi.txt").then(function(res){               
+                return res.text(); //콜백에 걸린 리턴이 패치의 결과로 돌아감
+            }).then(function(data){
+                //console.log(data);
+                return data;
+            }).then(function(data){
+                console.log(data);
+            }); //필요하면 계속 이어나갈 수 있음
+
+
+            //4nd - 비동기방식에서는 순서를 보장하지 않는다            
+            // console.log(1);
+
+            // fetch("hi.txt")
+            // .then(function(res){
+            //     return res.text();     
+            // })
+            // .then(function(data){
+            //     console.log(2);
+            // })
+            // console.log(3);
+
+        }
+ 
+    </script>
+
+</body>
+</html>

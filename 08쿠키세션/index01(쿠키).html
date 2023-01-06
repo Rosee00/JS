@@ -39,12 +39,12 @@
 
             var cookie = "";
             cookie += key + "=" + val + ";";
-            cookie += " path=/;";
+            cookie += " path=/;"; //생략가능
             cookie += " expires=" + date.toUTCString();
             
             document.cookie = cookie; //지속시간 1분
-            //
-           // document.cookie = "키=값; paht/; expires =" + date.toUTCString(); 
+        
+           // document.cookie = "키=값; expires=" + date.toUTCString(); 
 
 
 
